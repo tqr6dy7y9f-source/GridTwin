@@ -153,9 +153,38 @@ td.neg{color:var(--bad)}
 @media (max-width:560px){.guidegrid{grid-template-columns:1fr}}
 [hidden]{display:none!important}
 </style></head><body><style id="rpcss">
-:root{--wind:#3a93ab}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--wind:#62bdd4}}
-:root[data-theme="dark"]{--wind:#62bdd4}
+:root{--wind:#3a93ab;--leaf:#1b6a48;--leaf-2:#2e8b5f;--mint:#e2efe6;--mint-2:#cfe4d6;--on-leaf:#ffffff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--wind:#62bdd4;--leaf:#5fc796;--leaf-2:#3fa575;--mint:#15302a;--mint-2:#1d4136;--on-leaf:#0b1d16}}
+:root[data-theme="dark"]{--wind:#62bdd4;--leaf:#5fc796;--leaf-2:#3fa575;--mint:#15302a;--mint-2:#1d4136;--on-leaf:#0b1d16}
+/* GridTwin kimliği: yaprak yeşili vurgu, nane yüzeyler; ikonlar çizgi (stroke) tarzında */
+header.gt{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:flex-start;justify-content:space-between;background:var(--mint);border:1px solid var(--mint-2);padding:18px 20px;position:relative;overflow:hidden}
+header.gt::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;border:28px solid var(--mint-2);opacity:.7;pointer-events:none}
+.brand{display:flex;gap:14px;align-items:flex-start;min-width:0;flex:1 1 520px;position:relative;z-index:1}
+.logo{flex:none;width:48px;height:48px}
+.brand h1{color:var(--leaf);letter-spacing:-.02em}
+.brand .sub{color:var(--ink);opacity:.8}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:600;color:var(--leaf);background:var(--panel);border:1px solid var(--mint-2);border-radius:999px;padding:3px 10px 3px 8px}
+.tag svg,.ico{width:15px;height:15px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+header.gt .ctx{position:relative;z-index:1;align-items:center}
+.btn{background:var(--leaf);border-color:var(--leaf);color:var(--on-leaf)}
+.btn:hover{background:var(--leaf-2);border-color:var(--leaf-2)}
+.btn:focus-visible,.linkbtn:focus-visible,summary:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--leaf);color:var(--leaf)}
+.btn.ghost[aria-pressed="true"]{background:var(--leaf);border-color:var(--leaf);color:var(--on-leaf)}
+#pdfBtn{display:inline-flex;align-items:center;gap:8px}
+.eco{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--mint-2);border:1px solid var(--mint-2)}
+.eco>div{background:var(--mint);padding:10px 12px;display:flex;gap:10px;align-items:flex-start;min-width:0}
+.eco .ico{width:22px;height:22px;color:var(--leaf);margin-top:2px}
+.eco b{display:block;font-family:var(--f-display);font-size:18px;color:var(--leaf);font-variant-numeric:tabular-nums;line-height:1.2}
+.eco span{display:block;font-size:11.5px;color:var(--muted);line-height:1.3}
+@media (max-width:860px){.eco{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.win>summary h3{display:flex;align-items:center;gap:8px}
+.win>summary h3 .ico{color:var(--leaf)}
+.guide{border-left:4px solid var(--leaf)}
+.guidegrid>div{border-left-color:var(--leaf-2)}
+.rkick{color:#1b6a48!important}
 .rpwrap{position:absolute;left:-12000px;top:0;width:794px}
 .rpage{width:794px;height:1123px;background:#fff;color:#17262b;padding:34px 46px 28px;display:flex;flex-direction:column;overflow:hidden;font-size:11px;line-height:1.42;box-sizing:border-box;
  --bg:#f2f5f3;--panel:#ffffff;--ink:#17262b;--muted:#5d6c70;--line:#d1dad6;--ground:#e4ebe1;--green:#d3e2c9;--road:#fbfcfa;--water:#c9dde6;--none:#cfd6d3;
@@ -218,16 +247,72 @@ td.neg{color:var(--bad)}
 .sec.win{display:block}
 .win .wb{display:grid;gap:10px;margin-top:10px}
 .wbar{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px}
+
+.rpage{font-size:11.5px;line-height:1.45;--leaf:#1b6a48;--leaf-2:#2e8b5f;--mint:#e8f3ec;--mint-2:#cfe4d6}
+.rhead{border-bottom:2px solid var(--leaf)!important;align-items:center}
+.rbrand{display:inline-flex;align-items:center;gap:7px;text-transform:none;letter-spacing:0;font-size:10.5px}
+.rbrand b{color:var(--leaf);font-size:12px}
+.ri{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.rhero{display:flex;gap:16px;align-items:stretch;background:var(--mint);border-radius:10px;padding:14px 18px}
+.rhl{flex:1;min-width:0}.rhl .rkick{color:var(--leaf)!important}
+.rhl h1{font-size:24px;margin:4px 0 6px;color:var(--ink)}
+.rhl p{margin:0;color:var(--muted);font-size:11.5px}
+.rverd{width:170px;flex:none;background:#fff;border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;justify-content:center;border-top:4px solid var(--ok)}
+.rverd.no{border-top-color:var(--bad)}
+.rverd b{font-family:var(--f-display);font-size:34px;line-height:1;color:var(--ok)}.rverd.no b{color:var(--bad)}
+.rverd small{font-size:16px;color:var(--muted)}
+.rverd span{font-weight:600;margin-top:4px}.rverd em{font-style:normal;font-size:10px;color:var(--muted);margin-top:3px}
+.rtiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.rtiles>div{border:1px solid var(--line);border-radius:8px;padding:9px 11px}
+.rtiles span{display:block;font-size:9.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.rtiles b{display:block;font-family:var(--f-display);font-size:18px;margin:2px 0}
+.rtiles em{font-style:normal;font-size:10px;color:var(--muted)}
+.reco{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:8px}
+.reco>div{display:flex;gap:8px;align-items:flex-start;background:var(--mint);border-radius:8px;padding:9px 11px}
+.reco b{display:block;font-family:var(--f-display);font-size:16px;color:var(--leaf)}
+.reco span{display:block;font-size:10px;color:var(--muted);line-height:1.3}
+.rh2{font-family:var(--f-display);font-size:14px;font-weight:700;color:var(--ink);display:flex;align-items:baseline;gap:8px;margin:4px 0 0;padding-bottom:4px;border-bottom:2px solid var(--mint-2)}
+.rh2 small{font-size:10px;font-weight:400;color:var(--muted)}
+.rfind{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rfind>div{display:flex;gap:9px;align-items:flex-start;border-left:4px solid;background:#f6f8f7;border-radius:0 8px 8px 0;padding:9px 11px}
+.rfind b{display:block;font-size:12px}.rfind p{margin:2px 0 0;color:var(--muted);font-size:10.5px}
+.rtr td,.rtr th{padding:3px 6px;vertical-align:middle}
+.rtr td{font-size:10.5px}
+.rpill{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 8px;border-radius:999px;color:#fff;background:var(--ok)}
+.rpill.warn{background:var(--warn)}.rpill.bad{background:var(--bad)}
+.rbar{position:relative;width:96px;height:8px;background:#e9eeeb;border-radius:4px}
+.rbar i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
+.rbar s{position:absolute;top:-2px;bottom:-2px;width:1.5px;background:var(--ink)}
+.rconds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 12px}
+.rcg{display:grid;gap:2px}
+.rcgh{display:flex;align-items:center;gap:6px;font-weight:700;color:var(--leaf);font-size:11px;margin-bottom:2px}
+.rcgh .ri{width:15px;height:15px}
+.rcg>div:not(.rcgh){display:flex;justify-content:space-between;gap:6px;border-bottom:1px dotted var(--line);font-size:9.5px;padding:1px 0}
+.rcg span{color:var(--muted)}.rcg b{font-weight:600;text-align:right}
+.rpage .rsec{color:var(--ink);border-bottom-color:var(--mint-2)}
+.rpage .rsec.rbig{border-bottom:2px solid var(--leaf)}
+.rpage .rsum{background:var(--mint);border-left-color:var(--leaf);border-radius:0 8px 8px 0}
+.rpage .big div{border-radius:8px;border-color:var(--mint-2)}
+.rpage .big b{color:var(--leaf)}
 </style>
 
 <div class="app">
-<header>
-  <div>
-    <h1>GridTwin</h1>
-    <p class="sub">Trafo bazında GES ve elektrikli araç kapasite planlaması için dijital şebeke ikizi. Atakum – Atakent, Yenimahalle, Güzelyalı pilotu. Çatı ve arazi GES, bina bataryası, elektrikli araç ve otobüs şarjı, ısı pompası ve hidrojen senaryolarında trafoların durumu, hane başı maliyet ve geri ödeme.</p>
+<header class="gt">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="var(--leaf)"/><path d="M13 35c0-13 9-21 23-22 0 14-8 22-23 22z" fill="var(--on-leaf)"/><path d="M13 35l9-9m0 0l8-8m-8 8h6m-6 0v-6" fill="none" stroke="var(--leaf)" stroke-width="2.2" stroke-linecap="round"/><circle cx="22" cy="26" r="2.4" fill="var(--leaf)"/><circle cx="30" cy="18" r="2" fill="var(--leaf)"/></svg>
+    <div style="min-width:0">
+      <h1>GridTwin</h1>
+      <p class="sub">Sürdürülebilir bir gelecek için dijital şebeke ikizi: mahalle trafolarının çatı güneşini, elektrikli araçları ve ısı pompalarını ne zaman, nerede kaldırabileceğini saat saat gösterir. Atakum – Atakent, Yenimahalle, Güzelyalı pilotu.</p>
+      <div class="tags">
+        <span class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Çatı güneşi</span>
+        <span class="tag"><svg viewBox="0 0 24 24"><path d="M5 20c0-9 6-15 15-16 0 9-6 15-15 16z"/><path d="M5 20l8-8"/></svg>Düşük karbon</span>
+        <span class="tag"><svg viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4"/></svg>E-mobilite</span>
+        <span class="tag"><svg viewBox="0 0 24 24"><path d="M12 2l-5 20M12 2l5 20M8.5 9h7M7.3 14h9.4M6 19h12"/></svg>Akıllı şebeke</span>
+      </div>
+    </div>
   </div>
   <div class="ctx">
-    <button type="button" class="btn" id="pdfBtn">PDF rapor indir</button><span class="hint" id="pdfMsg" role="status" aria-live="polite"></span>
+    <button type="button" class="btn" id="pdfBtn"><svg class="ico" viewBox="0 0 24 24"><path d="M12 4v11m0 0l-4-4m4 4l4-4M5 20h14"/></svg>PDF rapor indir</button><span class="hint" id="pdfMsg" role="status" aria-live="polite"></span>
   </div>
 </header>
 
@@ -245,7 +330,7 @@ td.neg{color:var(--bad)}
 <aside class="col" aria-label="Ayarlar">
   <div class="wbar"><span class="hint">Ayarlar · başlığa tıklayarak aç/kapat</span><span><button type="button" class="linkbtn" id="wOpen">Tümünü aç</button> · <button type="button" class="linkbtn" id="wClose">Tümünü kapat</button></span></div>
   <details class="sec gen win" data-w="sen" open>
-    <summary><h3>Senaryo seviyesi</h3></summary><div class="wb">
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-5 4 4 8-8"/><path d="M14 8h6v6"/></svg>Senaryo seviyesi</h3></summary><div class="wb">
     <div class="presets" id="presets" role="group" aria-label="Hazır senaryolar">
       <button type="button" class="btn ghost" data-p='{"ges":0.05,"ev":0.015,"hp":0,"smart":0}' aria-pressed="true">Bugün</button>
       <button type="button" class="btn ghost" data-p='{"ges":0.08,"ev":0.085,"hp":0.02,"smart":0}'>2030</button>
@@ -261,7 +346,7 @@ td.neg{color:var(--bad)}
   </div></details>
 
   <details class="sec sun win" data-w="gun">
-    <summary><h3>Güneş ve çatı</h3></summary><div class="wb">
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>Güneş ve çatı</h3></summary><div class="wb">
     <div class="sl"><label for="ver">Referans çatı verimi (güneye 30°)</label><b id="verV"></b><input type="range" id="ver" min="1000" max="1600" step="10"></div>
     <div class="seg" role="radiogroup" aria-label="Çatı tipi"><span class="hint wide">Çatı tipi</span>
       <label><input type="radio" name="roof" value="egimli" checked> Eğimli (binanın yönüne göre)</label><label><input type="radio" name="roof" value="duz"> Düz (panel güneye çevrilir)</label></div>
@@ -271,21 +356,21 @@ td.neg{color:var(--bad)}
   </div></details>
 
   <details class="sec dem win" data-w="bat">
-    <summary><h3>Batarya</h3></summary><div class="wb">
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2M7 10v4M11 10v4"/></svg>Batarya</h3></summary><div class="wb">
     <div class="sl"><label for="hbr">Bina bataryası (hibrit sistem)</label><b id="hbrV"></b><input type="range" id="hbr" min="0" max="3" step="0.25"></div>
     <div class="sl"><label for="bat">Trafo yanına batarya</label><b id="batV"></b><input type="range" id="bat" min="0" max="1000" step="25"></div>
     <p class="hint">Bina bataryası, kurulu panel gücünün kWp'si başına kWh'tir; öğlen fazlasını akşama taşır, üç zamanlı tarifede gece ucuz saatte dolar. Trafo bataryası şebeke tarafında puantı tıraşlar.</p>
   </div></details>
 
   <details class="sec sto win" data-w="ula">
-    <summary><h3>Ulaşım</h3></summary><div class="wb">
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16M8 20v-3M16 20v-3"/><circle cx="8" cy="14" r=".6"/><circle cx="16" cy="14" r=".6"/></svg>Ulaşım</h3></summary><div class="wb">
     <div class="seg" role="radiogroup" aria-label="Otobüs şarj saati"><span class="hint wide">Elektrikli otobüs şarjı</span>
       <label><input type="radio" name="busm" value="gunduz" checked> Gün içinde (hat sonunda hızlı şarj)</label><label><input type="radio" name="busm" value="gece"> Gece garajda</label></div>
     <p class="hint">Otobüs şarj istasyonunu bir trafoya eklemek için trafoya tıkla. Varsayım: otobüs başına günde ≈335 km, ≈1,3 kWh/km. SAMULAŞ'ın E1 Ekspres hattında elektrikli otobüsler günde toplam ≈3.360 km yapıyor (2022).</p>
   </div></details>
 
   <details class="sec gen win" data-w="han">
-    <summary><h3>Hane / bina yatırımı</h3></summary><div class="wb">
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10M10 20v-6h4v6"/></svg>Hane / bina yatırımı</h3></summary><div class="wb">
     <div class="sl"><label for="hk">Hane başı yıllık elektrik tüketimi</label><b id="hkV"></b><input type="range" id="hk" min="1200" max="5000" step="100"></div>
     <div class="seg" role="radiogroup" aria-label="Tarife"><span class="hint wide">Tarife</span>
       <label><input type="radio" name="tar" value="tek" checked> Tek zamanlı</label><label><input type="radio" name="tar" value="uc"> Üç zamanlı</label></div>
@@ -331,7 +416,7 @@ td.neg{color:var(--bad)}
   </div></details>
 
   <details class="sec mun win" data-w="bel">
-    <summary><h3>Belediye: arazi GES, rüzgâr ve depolama</h3></summary><div class="wb">
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-5h6v5M9 12h.01M15 12h.01"/></svg>Belediye: arazi GES, rüzgâr ve depolama</h3></summary><div class="wb">
     <div class="col" id="arazList" style="gap:4px"></div>
     <div class="sl"><label for="aMW">Arazi GES gücü</label><b id="aMWV"></b><input type="range" id="aMW" min="0" max="3" step="0.05"></div>
     <div class="sl"><label for="belT">Belediyenin mahsuplaşacağı tüketim</label><b id="belTV"></b><input type="range" id="belT" min="0.5" max="20" step="0.5"></div>
@@ -361,7 +446,7 @@ td.neg{color:var(--bad)}
   </div></details>
 
   <details class="box win" data-w="seb">
-    <summary><h3>Şebeke ve trafo varsayımları</h3></summary>
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l-5 20M12 2l5 20M8.5 9h7M7.3 14h9.4M6 19h12"/></svg>Şebeke ve trafo varsayımları</h3></summary>
     <div class="col" style="margin-top:10px;gap:8px">
       <div class="sl"><label for="lim">İzin verilen ters akış (trafo gücünün %'si)</label><b id="limV"></b><input type="range" id="lim" min="0.2" max="1" step="0.05"></div>
       <div class="ttl">AG hat ve gerilim</div>
@@ -383,7 +468,7 @@ td.neg{color:var(--bad)}
     </div>
   </details>
   <details class="box win" data-w="csv">
-    <summary><h3>YEDAŞ trafo listesini yükle</h3></summary>
+    <summary><h3><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0l-4 4m4-4l4 4M5 20h14"/></svg>YEDAŞ trafo listesini yükle</h3></summary>
     <div class="col" style="margin-top:10px">
       <p class="hint">Her satır: <code>ad,enlem,boylam,kVA</code>. Yüklenen liste OSM trafolarının yerini alır, binalar yeniden atanır.</p>
       <label for="csv" class="hint">CSV metni</label>
@@ -414,6 +499,12 @@ td.neg{color:var(--bad)}
     <div class="kpi"><div class="l">Senaryodaki çatı GES</div><div class="v" id="kP" style="color:var(--solar)"></div><div class="d" id="kPd"></div></div>
     <div class="kpi"><div class="l">Kalan GES kapasitesi</div><div class="v" id="kR"></div><div class="d">atanmış trafolarda toplam</div></div>
     <div class="kpi"><div class="l">Sınırı aşan trafo</div><div class="v" id="kX"></div><div class="d" id="kXd"></div></div>
+  </section>
+  <section class="eco" aria-label="Sürdürülebilirlik etkisi">
+    <div><svg class="ico" viewBox="0 0 24 24"><path d="M4 15a5 5 0 0 1 5-5 6 6 0 0 1 11 3 4 4 0 0 1-1 7H7a3 3 0 0 1-3-5z"/><path d="M9 17l6-6"/></svg><div><b id="eCO2"></b><span>önlenen CO₂ (yıllık)</span></div></div>
+    <div><svg class="ico" viewBox="0 0 24 24"><path d="M12 22v-7M12 15c-4 0-7-3-7-6.5S8 2 12 2s7 3 7 6.5-3 6.5-7 6.5z"/><path d="M9 22h6"/></svg><div><b id="eTree"></b><span>ağacın yıllık emdiği karbona eşdeğer</span></div></div>
+    <div><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><div><b id="eShare"></b><span>tüketimin yerel güneşten karşılanan payı</span></div></div>
+    <div><svg class="ico" viewBox="0 0 24 24"><path d="M5 20c0-9 6-15 15-16 0 9-6 15-15 16z"/><path d="M5 20l8-8"/></svg><div><b id="eExtra"></b><span id="eExtraT">önerilen çatılarla ek CO₂ azaltımı</span></div></div>
   </section>
   <section class="box mapbox">
     <div class="maphead">
@@ -1180,6 +1271,9 @@ function kpis(){
   $("kH").textContent=fmt(R.hh); $("kHd").textContent=`bölgede toplam ≈ ${fmt(R.hhAll)}`;
   $("kP").textContent=fmt(R.kwp/1e3,2)+" MWp"; $("kPd").textContent=`potansiyel ${fmt(R.pot/1e3,1)} MWp`;
   $("kR").textContent=fmt(R.hc/1e3,2)+" MWp";
+  const co2=R.pvKwh*.44/1e3, ex=R.cmp?R.cmp[S.alg].kwh*.44/1e3:0;
+  $("eCO2").textContent=fmt(co2)+" t"; $("eTree").textContent="≈ "+fmt(co2*1000/21); $("eShare").textContent="%"+fmt(R.loadKwh?100*R.selfKwh/R.loadKwh:0,1);
+  $("eExtra").textContent="+"+fmt(ex)+" t"; $("eExtraT").textContent=`önerilen ${fmt(R.cmp?R.cmp[S.alg].kwp:0)} kWp çatı GES'i ile ek azaltım`;
   $("kX").textContent=`${R.bad} / ${R.sites.length}`; $("kX").style.color=R.bad?"var(--bad)":"var(--ok)"; $("kXd").textContent=R.bad?"akıllı şarj, batarya ya da güçlendirme":"sınır aşımı yok";
 }
 
@@ -1504,53 +1598,66 @@ function rTrafo(s){
 
 function rBuildShort(){
   const now=new Date(), stamp=now.toLocaleDateString("tr-TR")+" "+now.toLocaleTimeString("tr-TR",{hour:"2-digit",minute:"2-digit"});
-  const bad=R.sites.filter(s=>s.durum==="bad"), warn=R.sites.filter(s=>s.durum==="warn"), selfp=R.pvKwh?100*R.selfKwh/R.pvKwh:0;
+  const bad=R.sites.filter(s=>s.durum==="bad"), warn=R.sites.filter(s=>s.durum==="warn");
   const selB=S.sel&&S.sel.k==="b"?D.bina.find(x=>x.id===S.sel.id):null, selT=S.sel&&S.sel.k==="t"?R.sites[S.sel.i]:null;
   const eB=selB?econ(selB):null, bel=(S.aMW>0||S.rMW>0)?belediye():null, site=D.arazi.find(a=>a.id===S.aSite);
-  const busN=Object.values(S.bus).reduce((a,v)=>a+(v||0),0);
-  const sum=[
-    bad.length?`<b>Sınırı aşan trafo: ${bad.length} / ${R.sites.length}</b> (${bad.map(s=>s.id).join(", ")}). ${S.smart?"":"İlk ve yatırımsız adım akıllı şarjdır."}`:`<b>Hiçbir trafo sınırı aşmıyor.</b>${warn.length?` Sınırda: ${warn.map(s=>s.id).join(", ")}.`:""}`,
-    `Atanmış trafolarda ek <b>${fmt(R.hc/1e3,2)} MWp</b> çatı GES'i için yer var. Mevcut çatılara ${S.alg==="lp"?"doğrusal programlamayla":"sezgisel yöntemle"} dağıtıldığında ${fmt(R.cmp[S.alg].kwp)} kWp (${fmt(R.cmp[S.alg].kwh/1e6,2)} GWh/yıl); diğer yöntem ${fmt(R.cmp[S.alg==="lp"?"gr":"lp"].kwp)} kWp.`,
-    R.vbad?`<b>AG gerilim bandını (±%${fmt(S.vb*100,1)}) aşan trafo: ${R.vbad}</b> (${R.sites.filter(s=>vStat(s)==="bad").map(s=>s.id).join(", ")}); trafo bataryası bunu çözmez, kademe ayarı, kablo ya da akıllı şarj gerekir.`:`AG hatlarda gerilim ±%${fmt(S.vb*100,1)} bandı içinde.`,
-    `Yıllık tüketim ${fmt(R.loadKwh/1e6,2)} GWh; çatı GES üretimi ${fmt(R.pvKwh/1e6,2)} GWh, bölgede tüketilen pay %${fmt(selfp)}; önlenen CO₂ ≈${fmt(R.pvKwh*.44/1e3)} t/yıl.`];
-  if(eB&&eB.kwp>=.5) sum.push(`Seçili bina: ${fmt(eB.kwp,1)} kWp${eB.cap?" + "+fmt(eB.cap)+" kWh batarya":""}, daire başı yatırım ${S.fin==="esco"?"0 TL":tl(eB.capex/eB.nD)}, geri ödeme <b>${payTxt(eB.pay)}</b> (ayrıntı 2. sayfada).`);
-  if(bel){const parts=[];if(S.aMW>0)parts.push(`${fmt(S.aMW,2)} MWp arazi GES'i (geri ödeme ${bel.payPV?fmt(bel.payPV,1)+" yıl":"yok"})`);if(S.rMW>0)parts.push(`${fmt(S.rMW)} MW uzak rüzgâr (geri ödeme ${bel.payW?fmt(bel.payW,1)+" yıl":"yok"})`);if(S.rBat>0)parts.push(`${fmt(S.rBat)} MWh batarya (ek getiri ${tl(bel.batGain)}/yıl)`);
-    sum.push(`Belediye: ${parts.join(", ")}; toplam yılda ${tl(bel.ben)} net kazanç${S.h2on?`; hidrojen eki yılda ${bel.h2gain>0?tl(bel.h2gain)+" ek getiri":tl(-bel.h2gain)+" zarar"}`:""}.`)}
-  sum.push(`Bağlam: ${RES_CTX}`);
-  const kv=(l,v)=>`<div><span>${l}</span><b>${esc(v)}</b></div>`, F=id=>FMTS[id](S[id]);
-  const box=(t,rows)=>`<div class="rcbox"><h3>${t}</h3><div class="stats">${rows.join("")}</div></div>`;
-  const fin=[kv("Finansman",radLab("fin"))]; if(S.fin==="kredi")fin.push(kv("Vade / faiz",`${S.vade} yıl / %${fmt(S.faiz*100)}`)); if(S.fin==="esco")fin.push(kv("ESCO indirimi",F("esd")));
-  const conds=`<div class="rcond">
-    ${box("Senaryo",[kv("Hazır senaryo",presetName()),kv("GES kuran çatı payı",F("ges")),kv("Elektrikli araçlı hane",F("ev")),kv("Akıllı şarj",S.smart?"açık (00–06)":"kapalı"),kv("Isı pompalı hane",F("hp")),kv("E-otobüs",busN?`${busN} otobüs · ${S.busm==="gunduz"?"gündüz":"gece"} şarj`:"yok")])}
-    ${box("Güneş ve batarya",[kv("Referans verim",F("ver")),kv("Çatı",S.roof==="duz"?"düz, 15° güneye":`eğimli, ${S.tilt}°`),kv("Komşu gölgesi",S.shade?"hesapta":"yok"),kv("Bina bataryası",F("hbr")),kv("Trafo bataryası",F("bat")),kv("Oynatıcı saati",zaman(S.hour))])}
-    ${box("Hane yatırımı",[kv("Hane tüketimi",fmt(S.hk)+" kWh/yıl"),kv("Tarife",S.tar==="tek"?`tek zamanlı ${fmt(S.el,2)} TL`:`3 zamanlı ${fmt(S.p1,2)}/${fmt(S.p2,2)}/${fmt(S.p3,2)} TL`),kv("Satış fiyatı",F("sat")),kv("Panel maliyeti",F("cap")),kv("Mahsuplaşma",S.mah==="ay"?"aylık":"saatlik"),kv("Kapsam / boyut",`${S.kul==="daire"?"tüm daireler":"ortak alan"} · ${({tuketim:"tüketime göre",cati:"tüm çatı",trafo:"trafoya sığan"})[S.boy]}`),...fin,kv("Hibe",F("hibe")),kv("Kurulum yılı",String(S.y0))])}
-    ${box("Şebeke ve belediye",[kv("Ters akış sınırı",F("lim")),kv("Varsayılan trafo",F("kva")),kv("Hizmet yarıçapı",F("rad")),kv("AG hat",CAB[S.cab].ad.replace(" Al","")),kv("Gerilim bandı / trafo",`${F("vb")} / ${fmt(S.vt,3)} pu`),kv("Tahsis yöntemi",S.alg==="lp"?"doğrusal programlama":"sezgisel"),kv("Trafo noktası",`${S.sites.length} (${S.sites[0]&&S.sites[0].src==="CSV"?"yüklenen":"OSM"})`),kv("Arazi GES",S.aMW>0?`${site.id} · ${fmt(S.aMW,2)} MWp`:"yok"),kv("Uzak rüzgâr",S.rMW>0?`${S.rMW} MW · KF %${fmt(S.rCF*100)}${S.rBat?" · "+S.rBat+" MWh batarya":""}`:"yok"),kv("Hidrojen",S.h2on?`${fmt(S.elz,2)} MW · ${fmt(S.h2s)} MWh`:"yok")])}
-  </div>`;
-  const rank={bad:0,warn:1,ok:2}, ts=[...R.sites].sort((a,b)=>a.id<b.id?-1:1);
-  const tt=`<table class="rt rtt"><thead><tr><th></th>${ts.map(s=>`<th class="n">${s.id}</th>`).join("")}</tr></thead><tbody>
-    <tr><td>Durum</td>${ts.map(s=>`<td class="n"><span class="rdot" style="background:var(${DC[s.durum]})"></span></td>`).join("")}</tr>
-    <tr><td>Tepe yük</td>${ts.map(s=>`<td class="n ${s.fwd>1?"neg":""}">%${fmt(s.fwd*100)}</td>`).join("")}</tr>
-    <tr><td>Ters akış</td>${ts.map(s=>`<td class="n ${s.rev>S.lim?"neg":""}">%${fmt(s.rev*100)}</td>`).join("")}</tr>
-    <tr><td>Gerilim min (%)</td>${ts.map(s=>`<td class="n ${s.vmin<1-S.vb?"neg":""}">${sgn(s.vmin-1)}</td>`).join("")}</tr>
-    <tr><td>Gerilim maks (%)</td>${ts.map(s=>`<td class="n ${s.vmax>1+S.vb?"neg":""}">${sgn(s.vmax-1)}</td>`).join("")}</tr>
-    <tr><td>Kalan GES (kWp)</td>${ts.map(s=>`<td class="n">${fmt(s.hc)}</td>`).join("")}</tr></tbody></table>`;
+  const busN=Object.values(S.bus).reduce((a,v)=>a+(v||0),0), F=id=>FMTS[id](S[id]);
+  const co2=R.pvKwh*.44/1e3, ex=R.cmp[S.alg], pn=presetName();
+  const I={sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+    leaf:'<path d="M5 20c0-9 6-15 15-16 0 9-6 15-15 16z"/><path d="M5 20l8-8"/>',tree:'<path d="M12 22v-7M12 15c-4 0-7-3-7-6.5S8 2 12 2s7 3 7 6.5-3 6.5-7 6.5z"/>',
+    alert:'<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18h.01"/>',check:'<circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/>',
+    bolt:'<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>',home:'<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>',city:'<path d="M3 21h18M5 21V10l7-5 7 5v11"/>',
+    tower:'<path d="M12 2l-5 20M12 2l5 20M8.5 9h7M7.3 14h9.4"/>',car:'<path d="M5 16l1.5-5h11L19 16M4 16h16v3H4zM7 19v1M17 19v1"/>'};
+  const ic=(k,c)=>`<svg class="ri" viewBox="0 0 24 24" style="color:var(${c||"--leaf"})">${I[k]}</svg>`;
+  // 1. başlık bandı ve hüküm
+  const worst=[...R.sites].sort((a,b)=>Math.max(b.fwd,b.rev/S.lim)-Math.max(a.fwd,a.rev/S.lim))[0];
   const bl=[];
-  bl.push(`<div class="rcover"><div class="rkick">Ön değerlendirme raporu · ${stamp}</div><h1>GridTwin Kapasite Raporu</h1>
-    <p class="rlead">Atakum – Atakent, Yenimahalle, Güzelyalı pilotu. Bütün sayılar aşağıdaki koşulların sonucudur.</p></div>`);
-  bl.push(`<div class="rkpi">
-    <div><span>Trafoya atanan bina</span><b>${fmt(R.ab)}</b><em>${fmt(R.nb)} binadan</em></div><div><span>Tahmini hane</span><b>${fmt(R.hh)}</b><em>bölgede ≈${fmt(R.hhAll)}</em></div>
-    <div><span>Senaryodaki çatı GES</span><b style="color:var(--solar)">${fmt(R.kwp/1e3,2)} MWp</b><em>potansiyel ${fmt(R.pot/1e3,1)} MWp</em></div>
-    <div><span>Kalan GES kapasitesi</span><b>${fmt(R.hc/1e3,2)} MWp</b><em>atanmış trafolarda</em></div><div><span>Sınırı aşan trafo</span><b style="color:var(${bad.length?"--bad":"--ok"})">${bad.length} / ${R.sites.length}</b><em>${bad.length?"önlem gerekli":"aşım yok"}</em></div></div>
-    <div class="rsum"><ul>${sum.map(x=>`<li>${x}</li>`).join("")}</ul></div>`);
-  bl.push(`<div class="rsec">Senaryo ve koşullar</div>${conds}`);
-  bl.push(`<div class="rsec">Trafolar</div>${tt}<p class="rnote">Tepe: yılın en yüksek tüketim saatinde trafo gücünün yüzdesi (sınır %100). Ters akış: en yüksek geri besleme (sınır %${fmt(S.lim*100)}). Gerilim: AG besleyicide en uç binadaki yıllık en düşük/en yüksek sapma (sınır ±%${fmt(S.vb*100,1)}). Kalan GES: termik ve gerilim sınırı aşılmadan eklenebilecek çatı GES'i.</p>`);
-  bl.push(`<div class="rsum" style="border-left-color:var(--solar)"><b>Zaman nasıl okunur?</b> Senaryo bir takvim değil, yaygınlık seviyesidir; trafo sonuçları bu seviye için temsili bir yılın 8.760 saatinden çıkar. Yatırım ise ${S.y0} başında başlar: ilk yıl sonunda yatırım henüz dönmemiştir, kâr geri ödeme yılından sonra başlar. Tutarlar ${S.y0} parasıyladır. Kat sayıları, trafo güçleri ve maliyetler varsayımdır; YEDAŞ verisiyle doğrulanmalıdır.</div>`);
+  bl.push(`<div class="rhero"><div class="rhl"><div class="rkick">Ön değerlendirme · ${stamp}</div><h1>Atakum pilotu · ${esc(pn)}</h1>
+      <p>8.760 saatlik simülasyon: 10 trafo noktası, ${fmt(R.ab)} bina ve yaklaşık ${fmt(R.hh)} hane. Bütün sonuçlar aşağıdaki koşullara göredir.</p></div>
+    <div class="rverd ${bad.length?"no":"ok"}"><b>${bad.length}<small> / ${R.sites.length}</small></b><span>${bad.length?"trafo sınırı aşıyor":"trafo sınırı aşmıyor"}</span><em>${bad.length?"en kritik: "+bad.map(s=>s.id).join(", "):`en yüklü: ${worst.id} · %${fmt(worst.fwd*100)}`}</em></div></div>`);
+  // 2. göstergeler
+  bl.push(`<div class="rtiles">
+    <div><span>Trafoya bağlı</span><b>${fmt(R.ab)} bina</b><em>≈ ${fmt(R.hh)} hane</em></div>
+    <div><span>Senaryodaki çatı GES</span><b>${fmt(R.kwp/1e3,2)} MWp</b><em>potansiyel ${fmt(R.pot/1e3,1)} MWp</em></div>
+    <div><span>Kalan GES kapasitesi</span><b>${fmt(R.hc/1e3,2)} MWp</b><em>termik ve gerilim sınırıyla</em></div>
+    <div><span>Önerilen ek GES</span><b>${fmt(ex.kwp)} kWp</b><em>${S.alg==="lp"?"doğrusal programlama":"sezgisel"} · ${fmt(ex.kwh/1e6,2)} GWh/yıl</em></div></div>
+    <div class="reco">
+    <div>${ic("leaf")}<div><b>${fmt(co2)} t</b><span>önlenen CO₂ / yıl</span></div></div>
+    <div>${ic("tree")}<div><b>≈ ${fmt(co2*1000/21)}</b><span>ağacın yıllık emdiği karbon</span></div></div>
+    <div>${ic("sun")}<div><b>%${fmt(R.loadKwh?100*R.selfKwh/R.loadKwh:0,1)}</b><span>tüketimin yerel güneşten payı</span></div></div>
+    <div>${ic("leaf")}<div><b>+${fmt(ex.kwh*.44/1e3)} t</b><span>önerilen çatılarla ek azaltım</span></div></div></div>`);
+  // 3. öne çıkanlar
+  const F1=[];
+  F1.push(bad.length?[ "alert","--bad",`${bad.length} trafoda sınır aşılıyor`,`${bad.map(s=>`${s.id} (${s.fwd>1?"tepe yük %"+fmt(s.fwd*100):s.rev>S.lim?"ters akış %"+fmt(s.rev*100):"gerilim"})`).join(", ")}. ${S.smart?"Batarya ya da trafo büyütme gerekiyor.":"İlk ve yatırımsız adım akıllı şarj."}`]
+     :["check","--ok","Bütün trafolar sınır içinde",warn.length?`Sınıra yakın: ${warn.map(s=>s.id).join(", ")}.`:`En yüklü trafo ${worst.id}, tepe yük %${fmt(worst.fwd*100)}.`]);
+  F1.push(["sun","--solar",`${fmt(R.hc/1e3,2)} MWp ek çatı GES'ine yer var`,`Mevcut çatılara dağıtıldığında ${fmt(ex.kwp)} kWp, yılda ${fmt(ex.kwh/1e6,2)} GWh üretim.`]);
+  F1.push(R.vbad?["tower","--bad",`${R.vbad} trafoda gerilim bandı aşılıyor`,"Trafo bataryası çözmez; kademe ayarı, kalın kablo ya da akıllı şarj gerekir."]
+     :["tower","--ok",`AG gerilimi ±%${fmt(S.vb*100,1)} bandında`,`En düşük %${fmt(Math.min(...R.sites.map(s=>s.vmin))*100,1)}, en yüksek %${fmt(Math.max(...R.sites.map(s=>s.vmax))*100,1)}.`]);
+  if(eB&&eB.kwp>=.5) F1.push(["home","--leaf",`Seçili bina ${payTxt(eB.pay)} içinde kendini öder`,`${fmt(eB.kwp,1)} kWp${eB.cap?" + "+fmt(eB.cap)+" kWh batarya":""}; daire başı ${S.fin==="esco"?"yatırım yok":tl(eB.capex/eB.nD)}. Ayrıntı 2. sayfada.`]);
+  else if(bel) F1.push(["city","--leaf",`Belediye yılda ${tl(bel.ben)} kazanır`,`${S.aMW>0?fmt(S.aMW,2)+" MWp arazi GES'i":""}${S.aMW>0&&S.rMW>0?" + ":""}${S.rMW>0?S.rMW+" MW rüzgâr":""}; toplam geri ödeme ${bel.payAll?fmt(bel.payAll,1)+" yıl":"yok"}.`]);
+  else F1.push(["car","--grid",`Elektrikli araç payı %${fmt(S.ev*100,1)}`,S.smart?"Akıllı şarj açık: araçlar gece 00–06 arasında şarj oluyor.":"Akıllı şarj kapalı: şarj akşam 18–23'e yığılıyor."]);
+  bl.push(`<div class="rh2">Öne çıkanlar</div><div class="rfind">${F1.map(([i,c,t,d])=>`<div style="border-color:var(${c})">${ic(i,c)}<div><b>${t}</b><p>${d}</p></div></div>`).join("")}</div>`);
+  // 4. trafolar
+  const ts=[...R.sites].sort((a,b)=>a.id<b.id?-1:1), PL={ok:"Uygun",warn:"Sınırda",bad:"Aşıyor"};
+  const bar=(v,lim,cls)=>{const w=Math.min(1,v/1.25)*100,m=lim/1.25*100;return `<div class="rbar"><i style="width:${w}%;background:var(${v>lim?"--bad":v>lim*.8?"--warn":cls})"></i><s style="left:${m}%"></s></div>`};
+  bl.push(`<div class="rh2">Trafolar <small>çubuktaki çizgi sınırı gösterir</small></div><table class="rt rtr"><thead><tr><th>Trafo</th><th>Durum</th><th>Tepe yük</th><th class="n"></th><th>Ters akış</th><th class="n"></th><th class="n">Gerilim min / maks</th><th class="n">Kalan GES</th></tr></thead><tbody>${
+    ts.map(s=>`<tr><td><b>${s.id}</b></td><td><span class="rpill ${s.durum}">${PL[s.durum]}</span></td><td>${bar(s.fwd,1,"--grid")}</td><td class="n">%${fmt(s.fwd*100)}</td><td>${bar(s.rev,S.lim,"--solar")}</td><td class="n">%${fmt(s.rev*100)}</td><td class="n ${vStat(s)==="bad"?"neg":""}">${fmt(s.vmin*100,1)} / ${fmt(s.vmax*100,1)}</td><td class="n">${fmt(s.hc)} kWp</td></tr>`).join("")}</tbody></table>`);
+  // 5. koşullar
+  const L=(l,v)=>`<div><span>${l}</span><b>${esc(v)}</b></div>`;
+  const G=(i,t,rows)=>`<div class="rcg"><div class="rcgh">${ic(i)}${t}</div>${rows.join("")}</div>`;
+  const fin=S.fin==="pesin"?"peşin":S.fin==="kredi"?`kredi · ${S.vade} yıl · %${fmt(S.faiz*100)}`:`ESCO · %${fmt(S.esd*100)} indirim`;
+  bl.push({html:`<div class="rh2">Seçilen koşullar</div><div class="rconds">
+    ${G("car","Senaryo",[L("Hazır senaryo",pn),L("GES kuran çatı",F("ges")),L("Elektrikli araçlı hane",F("ev")),L("Akıllı şarj",S.smart?"açık":"kapalı"),L("Isı pompası",F("hp")),L("E-otobüs",busN?busN+" · "+(S.busm==="gunduz"?"gündüz":"gece"):"yok")])}
+    ${G("sun","Güneş ve batarya",[L("Referans verim",F("ver")),L("Çatı",S.roof==="duz"?"düz, 15°":`eğimli, ${S.tilt}°`),L("Komşu gölgesi",S.shade?"hesapta":"yok"),L("Bina bataryası",F("hbr")),L("Trafo bataryası",F("bat"))])}
+    ${G("home","Hane yatırımı",[L("Hane tüketimi",fmt(S.hk)+" kWh/yıl"),L("Tarife",S.tar==="tek"?`tek · ${fmt(S.el,2)} TL`:`üç zamanlı`),L("Panel",F("cap")),L("Mahsuplaşma",S.mah==="ay"?"aylık":"saatlik"),L("Finansman",fin),L("Kurulum",String(S.y0))])}
+    ${G("tower","Şebeke ve belediye",[L("Ters akış sınırı",F("lim")),L("AG hat",({y150:"yeraltı 150 mm²",y95:"yeraltı 95 mm²",h70:"havai 70 mm²"})[S.cab]),L("Gerilim bandı",F("vb")),L("Tahsis",S.alg==="lp"?"doğrusal programlama":"sezgisel"),L("Arazi GES",S.aMW>0?`${site.id} · ${fmt(S.aMW,2)} MWp`:"yok"),L("Uzak rüzgâr",S.rMW>0?`${S.rMW} MW`:"yok")])}
+  </div><p class="rnote">Senaryo bir takvim değil, yaygınlık seviyesidir. Yatırım ${S.y0} başında başlar ve tutarlar ${S.y0} parasıyladır. Kat sayıları, trafo güçleri ve maliyetler varsayımdır; YEDAŞ verisiyle doğrulanmalıdır.</p>`});
   let p2=[];
   if(selB) p2=rBuilding(selB).slice(0,2);
   else if(selT) p2=rTrafo(selT);
   else p2=[`<div class="rsec rbig">Seçili bina</div><div class="result mid">Raporu oluştururken haritada bina seçili değildi. Bir binaya tıklayıp raporu yeniden oluşturursan bu sayfada o binanın haritası, güneş eğrisi, yatırımı ve nakit akışı yer alır.</div>`];
   p2[0]=p2[0].replace(/>6\. Seçili/,">Seçili"); if(p2[1]) p2[1]=p2[1].replace(">6.1 Yatırım",">Yatırım");
-  p2.forEach(h=>bl.push(h));
+  p2.forEach((h,i)=>bl.push(i===0?{br:1,html:h}:h));
   return {bl,stamp};
 }
 function rBuild(){
@@ -1618,7 +1725,7 @@ function rBuild(){
 function rPaginate(blocks,stamp){
   const wrap=document.createElement("div"); wrap.className="rpwrap"; document.body.appendChild(wrap);
   const pages=[]; let cur=null;
-  const np=()=>{const p=document.createElement("div");p.className="rpage rp";p.innerHTML=`<div class="rhead"><span>GridTwin Kapasite Raporu · Atakum pilotu</span><span class="pn"></span></div><div class="rbody"></div><div class="rfoot"><span>${esc(presetName())} · ${stamp}</span><span>Tahmini değerler · YEDAŞ verisiyle doğrulanmalı</span></div>`;wrap.appendChild(p);cur={p,body:p.querySelector(".rbody")};pages.push(cur)};
+  const np=()=>{const p=document.createElement("div");p.className="rpage rp";p.innerHTML=`<div class="rhead"><span class="rbrand"><svg viewBox="0 0 48 48" width="18" height="18"><rect width="48" height="48" rx="12" fill="#1b6a48"/><path d="M13 35c0-13 9-21 23-22 0 14-8 22-23 22z" fill="#fff"/><path d="M13 35l17-17" stroke="#1b6a48" stroke-width="2.4" stroke-linecap="round"/></svg><b>GridTwin</b> Kapasite raporu · Atakum pilotu</span><span class="pn"></span></div><div class="rbody"></div><div class="rfoot"><span>${esc(presetName())} · ${stamp}</span><span>Tahmini değerler · YEDAŞ verisiyle doğrulanmalı</span></div>`;wrap.appendChild(p);cur={p,body:p.querySelector(".rbody")};pages.push(cur)};
   np();
   blocks.forEach(x=>{const o=typeof x==="string"?{html:x}:x;
     if(o.br&&cur.body.children.length) np();
