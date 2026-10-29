@@ -1,0 +1,42 @@
+name: Uygulamayı derle
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  derle:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Klasörü hazırla
+        run: mkdir -p arac && cp gridtwin.html arac/gridtwin.html
+      - name: Gerekenleri kur
+        run: pip install pywebview pyinstaller
+      - name: Derle
+        run: pyinstaller --noconfirm --windowed --name "GridTwin" --add-data "arac:arac" app.py ${{ matrix.os == 'windows-latest' && '--onefile' || '' }}
+      - name: Mac uygulamasını sıkıştır
+        if: matrix.os == 'macos-latest'
+        run: ditto -c -k --keepParent dist/GridTwin.app GridTwin-mac.zip
+      - name: Windows dosyasını yükle
+        if: matrix.os == 'windows-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: GridTwin-windows
+          path: dist/GridTwin.exe
+      - name: Mac dosyasını yükle
+        if: matrix.os == 'macos-latest'
+        uses: actions/upload-artifact@v4
+        with:
+          name: GridTwin-mac
+          path: GridTwin-mac.zip
