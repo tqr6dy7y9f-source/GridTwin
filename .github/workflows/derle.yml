@@ -10,33 +10,36 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest, macos-latest]
+        dil: [tr, en]
     runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
+    env:
+      AD: ${{ matrix.dil == 'en' && 'GridTwin-EN' || 'GridTwin' }}
+      HTML: ${{ matrix.dil == 'en' && 'gridtwin_en.html' || 'gridtwin.html' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Klasörü hazırla
-        run: mkdir -p arac && cp gridtwin.html arac/gridtwin.html
       - name: Gerekenleri kur
         run: pip install pywebview pyinstaller
+      - name: Dosyaları hazırla
+        shell: bash
+        run: mkdir -p arac && cp "$HTML" arac/gridtwin.html
       - name: Derle
-        run: pyinstaller --noconfirm --windowed --name "GridTwin" --add-data "arac:arac" app.py ${{ matrix.os == 'windows-latest' && '--onefile' || '' }}
+        shell: bash
+        run: pyinstaller --noconfirm --windowed --name "$AD" --add-data "arac:arac" app.py ${{ matrix.os == 'windows-latest' && '--onefile' || '' }}
       - name: Mac uygulamasını sıkıştır
         if: matrix.os == 'macos-latest'
-        run: ditto -c -k --keepParent dist/GridTwin.app GridTwin-mac.zip
+        run: ditto -c -k --keepParent "dist/$AD.app" "$AD-mac.zip"
       - name: Windows dosyasını yükle
         if: matrix.os == 'windows-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: GridTwin-windows
-          path: dist/GridTwin.exe
+          name: ${{ env.AD }}-windows
+          path: dist/${{ env.AD }}.exe
       - name: Mac dosyasını yükle
         if: matrix.os == 'macos-latest'
         uses: actions/upload-artifact@v4
         with:
-          name: GridTwin-mac
-          path: GridTwin-mac.zip
+          name: ${{ env.AD }}-mac
+          path: ${{ env.AD }}-mac.zip
